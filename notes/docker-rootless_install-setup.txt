@@ -1,0 +1,35 @@
+// Docker for Linux (Rootless Mode)
+
+cd /mnt/c/Users/<username>
+
+mkdir dockersetup
+
+cd dockersetup
+
+curl -fs -o dockercerootlessinstall.sh https://raw.githubusercontent.com/docker/docker-install/refs/heads/master/rootless-install.sh
+
+sudo apt-get -y install uidmap
+
+sudo apt-get -y install iptables
+
+./dockercerootlessinstall.sh
+
+export PATH=/home/<username>/bin:$PATH
+export DOCKER_HOST=unix:///run/user/1000//docker.sock
+
+docker ps
+
+=================================================================================================================================================================
+
+// Docker Compose for Linux
+
+# Download docker-compose-linux from the internet -> https://github.com/docker/compose/releases/download/v2.39.1/docker-compose-linux-x86_64
+Execute the following commands on WSL after downloading the above executable, don't change the file's path after downloading.
+
+cd ~
+mkdir -p ~/bin
+cd ~/bin
+cp /mnt/c/Users/<username>/Downloads/docker-compose-linux-x86_64 ./docker-compose
+chmod 755 docker-compose
+./docker-compose
+

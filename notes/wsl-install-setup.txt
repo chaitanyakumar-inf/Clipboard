@@ -1,0 +1,24 @@
+// Windows Subsystem for Linux
+
+# Enable the Windows Subsystem for Linux (WSL) feature on Windows by following the below procedure.
+1. Win+S	->	Search for "Windows Features"	-> Click on "Turn Windows Features on or off (Control Panel)".	#Requires Elevation
+2. Enable Required Features -> (Windows Subsystem for Linux).
+3. Restart the PC.
+4. Open CMD.
+
+# Run the following commands on CMD.
+wsl --list --online
+wsl --install <distro-name>
+
+
+# If any issue arises at the time of installation, it might be due to mismatched version of WSL. To resolve this issue, try the
+following two commands to set the WSL version to 2, and update the WSL.
+
+wsl --set-default-version 2
+
+wsl --update
+
+
+# To unregister any distro that is installed:
+
+wsl --unregister <Distro-name>

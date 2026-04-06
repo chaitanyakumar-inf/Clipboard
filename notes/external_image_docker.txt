@@ -1,0 +1,20 @@
+===================================
+ci-agenticai image loading process
+===================================
+
+- Download the 'ci-agenticai.targz' file.
+- Change the dir in docker to Downloads folder.
+
+# List the items in the folder (check for the file ci-agenticai.targz)
+
+ls -l
+
+mv ci-agenticai.targz ci-agenticai.tar.gz
+ 
+gunzip ci-agenticai.tar.gz
+ 
+docker load --input ci-agenticai.tar
+
+# Check the image, should be loaded into your docker!
+
+docker image ls

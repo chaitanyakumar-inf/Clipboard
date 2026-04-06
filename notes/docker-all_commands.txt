@@ -1,0 +1,83 @@
+// Docker Commands
+
+# List all running containers
+docker ps
+
+# List all containers (running and stopped)
+docker ps -a
+
+# List only container IDs
+docker ps -q
+
+# Create and start a new container from an image
+docker run <image>
+
+# Create and start a container in detached mode (in the background)
+docker run -d <image>
+
+# Run a container and map a port from host to container (e.g., 8080 -> 80)
+docker run -p 8080:80 <image>
+
+# Run python in interactive mode by creating a container (temporary, removed after exit)
+docker run --rm --name <container-name> -it python:3.13 python
+
+# Remove a container by name or ID
+docker rm <container-name>
+
+# Force remove a running container
+docker rm -f <container-name>
+
+# Stop a running container
+docker stop <container-name>
+
+# Stop all running containers
+docker stop $(docker ps -q)
+
+# Start a stopped container
+docker start <container-name>
+
+# Restart a container
+docker restart <container-name>
+
+# Show logs from a container
+docker logs <container-name>
+
+# Show real-time logs (follow mode)
+docker logs -f <container-name>
+
+# Pull an image from Docker Hub (or another registry)
+docker pull <image>
+
+# List all downloaded images
+docker image ls
+
+# Remove an image from local storage
+docker image rm <image-name>
+
+# Build a Docker image from a Dockerfile in the current directory
+docker build -t <image-name>:<tag> .
+
+# Show system-wide information about Docker
+docker info
+
+# Show version information about Docker
+docker version
+
+# Display container’s resource usage (CPU, memory, etc.)
+docker stats
+
+# Execute a command inside a running container
+docker exec -it <container-name> <command>
+
+# Open a shell inside a running container
+docker exec -it <container-name> /bin/bash
+
+# Inspect container details (network, config, etc.)
+docker inspect <container-name>
+
+# Remove all stopped containers, unused networks, and dangling images
+docker system prune -f
+
+# Remove all unused data (stopped containers, unused images, networks, etc.)
+docker system prune
+

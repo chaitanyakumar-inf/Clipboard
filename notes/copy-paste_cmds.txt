@@ -1,0 +1,11 @@
+// Docker Commands
+
+1.	To run a specific image in docker 	:	docker run --name <NAMEofCONTAINER> --rm -e POSTGRES_PASSWORD=<PASSWORD> -p 5432:5432 -v <anyName>:/var/lib/postgresql/data -d <IMAGEname>
+2.	Set-up the Database URL in CMD 		:	set AIR_DB_URL=postgresql://postgres:<PASSWORD>@localhost:5432/airefactor
+3.	Run a Specific File from WORKSPACE Path	:	python -m api_http.v1.router
+
+4.	Binded Docker Run Command			:	docker-compose -p air up --build --abort-on-container-failure
+
+========================================================================================================================================================
+
+~/.local/share/docker/volumes/ci_backendscrapperdata/_data/
